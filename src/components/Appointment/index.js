@@ -4,7 +4,7 @@ import Header from './Header';
 import Show from './Show';
 import Empty from './Empty';
 
-const appointments = {
+export const appointments = {
   "1": {
     id: 1,
     time: "12pm",
@@ -44,15 +44,16 @@ const appointments = {
 };
 
 export default function Appointment(props) {
+
   return (
     <article className="appointment">
-      <Header time={props.time}>
-        {props.interview ? (
-          <Show student={props.interview.student} interviewer={props.interview.interviewer} />
-        ) : (
-          <Empty />
-        )}
-      </Header>
+      <Header time={props.time} />
+      {props.interview ? (
+        <Show student={props.interview.student} interviewer={props.interview.interviewer} />
+      ) : (
+        <Empty />
+      )}
+
     </article>
   )
 }

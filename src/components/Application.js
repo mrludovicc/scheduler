@@ -3,6 +3,7 @@ import DayList from './DayList';
 import "components/Application.scss";
 import "index.scss";
 import "components/DayListItem.scss";
+import { appointments } from "./Appointment";
 import Appointment from 'components/Appointment';
 const days = [
   {
@@ -24,7 +25,9 @@ const days = [
 
 export default function Application(props) {
   const [day, setDay] = useState('Monday');
-
+  const appointmentArr = Object.values(appointments).map(appointment => {
+    return <Appointment key={appointment.id} {...appointment} />
+  })
   return (
     <main className="layout">
       <section className="sidebar">
@@ -48,9 +51,7 @@ export default function Application(props) {
         />
       </section>
       <section className="schedule">
-        <Application>
-
-        </Application>
+        {appointmentArr}
       </section>
     </main>
   );
