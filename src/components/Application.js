@@ -3,7 +3,7 @@ import DayList from './DayList';
 import "components/Application.scss";
 import "index.scss";
 import "components/DayListItem.scss";
-
+import Appointment from 'components/Appointment';
 const days = [
   {
     id: 1,
@@ -48,7 +48,9 @@ export default function Application(props) {
         />
       </section>
       <section className="schedule">
-        {/* Replace this with the schedule elements during the "The Scheduler" activity. */}
+        <Application>
+
+        </Application>
       </section>
     </main>
   );
