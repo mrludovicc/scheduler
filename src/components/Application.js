@@ -5,7 +5,7 @@ import "index.scss";
 import "components/DayListItem.scss";
 // import { appointments } from "./Appointment";
 import Appointment from 'components/Appointment';
-import { getAppointmentsForDay } from 'helpers/selectors';
+import { getAppointmentsForDay, getInterview } from 'helpers/selectors';
 import axios from 'axios';
 
 
