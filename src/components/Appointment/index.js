@@ -51,7 +51,7 @@ export default function Appointment(props) {
         transition(ERROR_DELETE, true)
       });
   }
-  console.log('props.interview appointment index: ', props.interview)
+  //console.log('props.interview appointment index: ', props.interview)
   const edit = () => {
     transition(EDIT);
   };
