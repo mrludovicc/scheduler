@@ -12,7 +12,6 @@ import useVisualMode from '../../hooks/useVisualMode';
 
 export default function Appointment(props) {
   const CREATE = "CREATE";
-  //console.log(props)
   const EMPTY = "EMPTY";
   const SHOW = "SHOW";
   const SAVING = "SAVING";
@@ -37,7 +36,6 @@ export default function Appointment(props) {
         transition(SHOW);
       })
       .catch(err => transition(ERROR_SAVE, true));
-    //.catch goes here
   }
 
   function deleted(event) {
@@ -47,15 +45,14 @@ export default function Appointment(props) {
       .cancelInterview(props.id)
       .then(() => transition(EMPTY))
       .catch(err => {
-        console.log('Catch hit');
         transition(ERROR_DELETE, true)
       });
   }
-  //console.log('props.interview appointment index: ', props.interview)
+
   const edit = () => {
     transition(EDIT);
   };
-  //console.log(props.interviewers)
+
   return (
     <article className="appointment" data-testid="appointment">
       <Header time={props.time} />
