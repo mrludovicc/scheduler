@@ -70,8 +70,8 @@ export default function Appointment(props) {
         onCancel={back}
         onSave={save}
       />}
-      {mode === ERROR_SAVE && <Error onClose={back} message={""} />}
-      {mode === ERROR_DELETE && <Error onClose={back} message={""} />}
+      {mode === ERROR_SAVE && <Error onClose={back} message={"Error cannot save appointment, please try again."} />}
+      {mode === ERROR_DELETE && <Error onClose={back} message={"Error cannot delete appointment, please try again."} />}
       {mode === SHOW && (
         <Show
           onEdit={edit}

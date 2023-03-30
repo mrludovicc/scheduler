@@ -122,8 +122,9 @@ it("loads data, books an interview and reduces the spots remaining for Monday by
     axios.delete.mockRejectedValueOnce();
     const { container } = render(<Application />);
     await waitForElement(() => getByText(container, "Archie Cohen"));
-    const appointments = getAllByTestId(container, "appointment");
-    const appointment = appointments[1];
+    const appointment = getAllByTestId(container, "appointment").find(
+      appointment => queryByText(appointment, "Archie Cohen")
+    );
     fireEvent.click(getByAltText(appointment, "Delete"));
     expect(
       getByText(appointment, /are you sure you would like to delete/i)
@@ -131,6 +132,7 @@ it("loads data, books an interview and reduces the spots remaining for Monday by
     fireEvent.click(getByText(appointment, "Confirm"));
     await waitForElementToBeRemoved(() => getByText(container, "Deleting"));
     expect(getByText(appointment, "Error")).toBeInTheDocument();
+    console.log(prettyDOM(appointment))
     fireEvent.click(getByAltText(appointment, "Close"));
     expect(getByText(appointment, "Archie Cohen")).toBeInTheDocument();
   });
