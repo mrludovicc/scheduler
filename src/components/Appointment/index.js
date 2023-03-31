@@ -36,9 +36,9 @@ export default function Appointment(props) {
         transition(SHOW);
       })
       .catch(err => transition(ERROR_SAVE, true));
-  }
+  };
 
-  function deleted(event) {
+  const deleted = (event) => {
     transition(DELETING, true);
 
     return props
@@ -47,7 +47,7 @@ export default function Appointment(props) {
       .catch(err => {
         transition(ERROR_DELETE, true)
       });
-  }
+  };
 
   const edit = () => {
     transition(EDIT);
@@ -80,7 +80,6 @@ export default function Appointment(props) {
           interviewer={props.interview?.interviewer}
         />
       )}
-
     </article>
-  )
-}
+  );
+};

@@ -22,10 +22,10 @@ export default function useApplicationData() {
           days: all[0].data,
           appointments: all[1].data,
           interviewers: all[2].data }))
-      })
-  }, [])
+      });
+  }, []);
 
-  function bookInterview(id, interview) {
+  const bookInterview = (id, interview) => {
     const appointment = {
       ...state.appointments[id],
       interview: { ...interview }
@@ -45,9 +45,9 @@ export default function useApplicationData() {
           days
         });
       });
-  }
+  };
 
-  function cancelInterview(id) {
+  const cancelInterview = (id) => {
     const appointment = {
       ...state.appointments[id],
       interview: null
@@ -66,8 +66,8 @@ export default function useApplicationData() {
           appointments,
           days
         });
-      })
-  }
+      });
+  };
 
   const updateSpots = (state, appointments) => {
     let spots = 0;
@@ -76,15 +76,15 @@ export default function useApplicationData() {
     for (const id of dayObj.appointments) {
       if (!appointments[id].interview) {
         spots++;
-      }
-    }
+      };
+    };
 
     const day = { ...dayObj, spots };
     return state.days.map(d => d.name === state.day ? day : d)
   };
 
   return { state, setDay, bookInterview, cancelInterview };
-}
+};
 
 
 

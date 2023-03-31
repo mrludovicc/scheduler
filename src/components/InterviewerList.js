@@ -13,7 +13,7 @@ export default function InterviewerList(props) {
       setInterviewer={() => props.onChange(interviewer.id)}
     />
 
-  })
+  });
   return (
     <div className='interviewers'>
       <h5 className='interviewers__header'>interviewers</h5>
@@ -21,8 +21,8 @@ export default function InterviewerList(props) {
         {interviewers}
       </ul>
     </div>
-  )
-}
+  );
+};
 InterviewerList.propTypes = {
   interviewers: PropTypes.array.isRequired
 };
