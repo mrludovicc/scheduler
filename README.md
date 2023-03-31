@@ -14,7 +14,11 @@ npm start
 
 ## Walkthrough && Screenshots
 
-![Home Page Screenshot](./docs/Application-screenshot.png)
+
+https://user-images.githubusercontent.com/102895718/229019597-5bf3b786-9918-4210-abcc-e2f7632c7418.mp4
+
+
+![Home Page Screenshot](https://github.com/mrludovicc/scheduler/raw/master/docs/Application-screenshot.png)
 
 ## Running Jest Test Framework
 
