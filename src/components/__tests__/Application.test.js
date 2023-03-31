@@ -132,7 +132,6 @@ it("loads data, books an interview and reduces the spots remaining for Monday by
     fireEvent.click(getByText(appointment, "Confirm"));
     await waitForElementToBeRemoved(() => getByText(container, "Deleting"));
     expect(getByText(appointment, "Error")).toBeInTheDocument();
-    console.log(prettyDOM(appointment))
     fireEvent.click(getByAltText(appointment, "Close"));
     expect(getByText(appointment, "Archie Cohen")).toBeInTheDocument();
   });
